@@ -1,0 +1,7 @@
+{
+    "defaultTheme": "cms-theme-green",
+    "themes": [
+      "themes/cms-theme-green.json",
+      "themes/cms-theme-orange.json"
+   ]
+  }

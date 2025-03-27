@@ -1,0 +1,9 @@
+{
+  "name": "CMS Theme Green",
+  "id": "cms-theme-green",
+  "extends": ["xmlui-green"],
+  "themeVars": {
+
+
+  }
+}

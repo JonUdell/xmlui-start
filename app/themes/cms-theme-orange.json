@@ -1,0 +1,10 @@
+{
+  "name": "CMS Theme Orange",
+  "id": "cms-theme-orange",
+  "extends": ["xmlui-orange"],
+  "themeVars": {
+
+
+  }
+}
+
