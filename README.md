@@ -1,6 +1,6 @@
-# XMLUI Start
+# XMLUI Starter  Kit
 
-Install XMLUI and run your first app.
+## Install XMLUI
 
 <table>
   <thead>
@@ -23,13 +23,14 @@ Install XMLUI and run your first app.
     <tr valign="top">
       <td>
         2. <strong>Extract the ZIP</strong><br>
-        • Click the <strong>folder icon</strong> in your browser<br>
+        • Click the <strong>folder icon</strong> <br>
         • Click <strong>"Extract all…"</strong> in File Explorer<br>
         • Choose where to extract, then click <strong>Extract</strong>
       </td>
       <td>
         2. <strong>Extract the archive</strong><br>
-        • Click to open Finder on the extracted folder
+        • Click to open Finder on the extracted folder <br>
+        • Optionally, move the extracted folder
       </td>
     </tr>
     <tr valign="top">
@@ -41,39 +42,22 @@ Install XMLUI and run your first app.
       <td>
         3. <strong>Open Terminal in the extracted folder</strong><br>
         • Right-click (or Control-click) the folder<br>
-        • Choose <strong>"New Terminal at Folder"</strong> (or use Terminal + <code>cd</code>)
+        • Choose <strong>"New Terminal at Folder"</strong>
       </td>
     </tr>
     <tr valign="top">
       <td>
         4. <strong>Run the installer</strong><br>
         <code>install-windows.bat</code><br>
-        This will:<br>
-        • Download the server<br>
-        • Start it<br>
-        • Open <a href="http://localhost:8080">localhost:8080</a>
       </td>
       <td>
         4. <strong>Run the installer</strong><br>
         <code>bash ./install-mac.sh</code><br>
-        This will:<br>
-        • Download the server<br>
-        • Make it executable<br>
-        • Remove quarantine<br>
-        • Open <a href="http://localhost:8080">localhost:8080</a>
-      </td>
-    </tr>
-    <tr valign="top">
-      <td>
-        💡 <strong>Note:</strong><br>
-        If you double-click <code>install-windows.bat</code>, SmartScreen may block it.<br>
-        <strong>Run from Terminal to avoid this.</strong>
-      </td>
-      <td>
-        💡 <strong>Note:</strong><br>
-        If macOS warns about an "unidentified developer," this is expected.<br>
-        <strong>Running from Terminal avoids it.</strong>
       </td>
     </tr>
   </tbody>
 </table>
+
+## Dive in!
+
+The XMLUI starter app is running in the browser.
