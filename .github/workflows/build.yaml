@@ -27,17 +27,17 @@ jobs:
 
     - name: Package for macOS
       run: |
-        mkdir -p dist/macos/starter-kit
-        cp -r app dist/macos/starter-kit/
-        cp install-mac.sh dist/macos/starter-kit/
-        tar -czf starter-kit-mac.tar.gz -C dist/macos starter-kit
+        mkdir -p dist/macos/xmlui-starter-kit
+        cp -r app dist/macos/xmlui-starter-kit/
+        cp install-mac.sh dist/macos/xmlui-starter-kit/
+        tar -czf starter-kit-mac.tar.gz -C dist/macos xmlui-starter-kit
 
     - name: Package for Windows
       run: |
-        mkdir -p dist/windows/starter-kit
-        cp -r app dist/windows/starter-kit/
-        cp install-windows.bat dist/windows/starter-kit/
-        zip -r starter-kit-windows.zip dist/windows/starter-kit
+        mkdir -p dist/windows/xmlui-starter-kit
+        cp -r app dist/windows/xmlui-starter-kit/
+        cp install-windows.bat dist/windows/xmlui-starter-kit/
+        zip -r starter-kit-windows.zip dist/windows/xmlui-starter-kit
 
     - name: Upload release assets
       uses: softprops/action-gh-release@v2
