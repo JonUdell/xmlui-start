@@ -37,7 +37,8 @@ jobs:
         mkdir -p dist/windows/xmlui-starter-kit
         cp -r app dist/windows/xmlui-starter-kit/
         cp install-windows.bat dist/windows/xmlui-starter-kit/
-        zip -r starter-kit-windows.zip dist/windows/xmlui-starter-kit
+        cd dist/windows/xmlui-starter-kit
+        zip -r ../../../starter-kit-windows.zip ./*
 
     - name: Upload release assets
       uses: softprops/action-gh-release@v2
