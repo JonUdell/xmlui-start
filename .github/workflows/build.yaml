@@ -1,10 +1,10 @@
-name: Build Binaries
+name: Release Starter Kit
 
 on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Tag for this release (e.g. v0.1.0)"
+        description: "Tag for this starter kit release (e.g. v1.0.0)"
         required: true
         type: string
 
@@ -19,56 +19,32 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
-  build-linux:
+  package-and-upload:
     runs-on: ubuntu-latest
     needs: create-release
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.21'
-
-    - name: Build Linux binary
+    - name: Package for macOS
       run: |
-        GOOS=linux GOARCH=amd64 go build -v -o sqlite-server-linux
+        mkdir -p dist/macos/starter-kit
+        cp -r app dist/macos/starter-kit/
+        cp install-mac.sh dist/macos/starter-kit/
+        tar -czf starter-kit-mac.tar.gz -C dist/macos starter-kit
 
-    - name: Create tar.gz archive
+    - name: Package for Windows
       run: |
-        tar -czf sqlite-server-linux.tar.gz sqlite-server-linux
+        mkdir -p dist/windows/starter-kit
+        cp -r app dist/windows/starter-kit/
+        cp install-windows.bat dist/windows/starter-kit/
+        zip -r starter-kit-windows.zip dist/windows/starter-kit
 
-    - name: Upload Linux release asset
+    - name: Upload release assets
       uses: softprops/action-gh-release@v2
       with:
-        files: sqlite-server-linux.tar.gz
         tag_name: ${{ github.event.inputs.tag }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-
-  build-mac:
-    runs-on: macos-latest
-    needs: build-linux
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.21'
-
-    - name: Build macOS ARM64 binary
-      run: |
-        GOOS=darwin GOARCH=arm64 go build -v -o sqlite-server-mac-arm
-
-    - name: Create tar.gz archive
-      run: |
-        tar -czf sqlite-server-mac-arm.tar.gz sqlite-server-mac-arm
-
-    - name: Upload macOS release asset
-      uses: softprops/action-gh-release@v2
-      with:
-        files: sqlite-server-mac-arm.tar.gz
-        tag_name: ${{ github.event.inputs.tag }}
+        files: |
+          starter-kit-mac.tar.gz
+          starter-kit-windows.zip
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
