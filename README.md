@@ -60,8 +60,7 @@
 
 ## Dive in!
 
-The XMLUI starter app is running in the browser.
-
+The XMLUI starter app is running in the browser. Learn how XMLUI works, explore the demos, load the app into a code editor and alter or extend the demos.
 
 
 <img width="1116" alt="image" src="https://github.com/user-attachments/assets/6385ade1-278a-4192-948e-77567392c7bc" />
